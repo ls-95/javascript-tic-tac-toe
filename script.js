@@ -33,3 +33,17 @@ function startGame() {
   setBoardHoverClass();
   winningMessageElement.classList.remove("show");
 }
+
+function handleCellClick(e) {
+  const cell = e.target;
+  const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS;
+  placeMark(cell, currentClass);
+  if (checkWin(currentClass)) {
+    endGame(false);
+  } else if (isDraw()) {
+    endGame(true);
+  } else {
+    swapTurns();
+    setBoardHoverClass();
+  }
+}
