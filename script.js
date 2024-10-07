@@ -17,3 +17,19 @@ const winningMessageElement = document.getElementById("winningMessage");
 const restartButton = document.getElementById("restartButton");
 const winningMessageTextElement = document.getElementById("winningMessageText");
 let isPlayer_O_Turn = false;
+
+startGame();
+
+restartButton.addEventListener("click", startGame);
+
+function startGame() {
+  isPlayer_O_Turn = false;
+  cellElements.forEach((cell) => {
+    cell.classList.remove(PLAYER_X_CLASS);
+    cell.classList.remove(PLAYER_O_CLASS);
+    cell.removeEventListener("click", handleCellClick);
+    cell.addEventListener("click", handleCellClick, { once: true });
+  });
+  setBoardHoverClass();
+  winningMessageElement.classList.remove("show");
+}
