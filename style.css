@@ -59,3 +59,63 @@ body {
 .cell.circle {
   cursor: not-allowed;
 }
+
+/* for cross */
+.cell.x {
+  background: linear-gradient(
+      to top right,
+      transparent calc(50% - var(--l) / 2),
+      var(--color-set) calc(50% - var(--l) / 2),
+      var(--color-set) calc(50% + var(--l) / 2),
+      transparent calc(50% + var(--l) / 2)
+    ),
+    linear-gradient(
+      to bottom right,
+      transparent calc(50% - var(--l) / 2),
+      var(--color-set) calc(50% - var(--l) / 2),
+      var(--color-set) calc(50% + var(--l) / 2),
+      transparent calc(50% + var(--l) / 2)
+    );
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: not-allowed;
+}
+
+/* for cricle */
+.cell.circle {
+  background: radial-gradient(circle, var(--color-set) 60%, transparent 60%);
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: not-allowed;
+}
+
+/* Hover effects for X */
+.board.x .cell:not(.circle):not(.x):hover {
+  background: linear-gradient(
+      to top right,
+      transparent calc(50% - var(--l) / 2),
+      var(--color) calc(50% - var(--l) / 2),
+      var(--color) calc(50% + var(--l) / 2),
+      transparent calc(50% + var(--l) / 2)
+    ),
+    linear-gradient(
+      to bottom right,
+      transparent calc(50% - var(--l) / 2),
+      var(--color) calc(50% - var(--l) / 2),
+      var(--color) calc(50% + var(--l) / 2),
+      transparent calc(50% + var(--l) / 2)
+    );
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Hover effects for O */
+.board.circle .cell:not(.circle):not(.x):hover {
+  background: radial-gradient(circle, var(--color) 60%, transparent 60%);
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
