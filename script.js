@@ -37,7 +37,7 @@ function startGame() {
 function handleCellClick(e) {
   const cell = e.target;
   const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS;
-  placeMark(cell, currentClass);
+  placeMark(cell, currentClass); //calling placeMark function.
   if (checkWin(currentClass)) {
     endGame(false);
   } else if (isDraw()) {
@@ -72,3 +72,13 @@ function isDraw() {
 //This returns the value in case the is a draw.
 //the every method checks all the elements of an array to confirm a condition by returning a boolean value.
 //It is usually defined as an array which tests the elements of an array and returns true(1) if they pass the test.
+
+function placeMark(cell, currentClass) {
+  cell.classList.add(currentClass);
+}
+//Places the character in the cell, currentClass being either X or O depending on whose turn it is.
+
+function swapTurns() {
+  isPlayer_O_Turn = !isPlayer_O_Turn;
+}
+//This function is the one which swaps the turns after the character is placed in a cell.
