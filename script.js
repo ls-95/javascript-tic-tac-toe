@@ -82,3 +82,13 @@ function swapTurns() {
   isPlayer_O_Turn = !isPlayer_O_Turn;
 }
 //This function is the one which swaps the turns after the character is placed in a cell.
+
+function setBoardHoverClass() {
+  boardElement.classList.remove(PLAYER_X_CLASS);
+  boardElement.classList.remove(PLAYER_O_CLASS);
+  if (isPlayer_O_Turn) {
+    boardElement.classList.add(PLAYER_O_CLASS);
+  } else {
+    boardElement.classList.add(PLAYER_X_CLASS);
+  }
+}
