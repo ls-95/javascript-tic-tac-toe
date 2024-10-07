@@ -60,3 +60,15 @@ function endGame(draw) {
   }
   winningMessageElement.classList.add("show");
 }
+
+function isDraw() {
+  return [...cellElements].every((cell) => {
+    return (
+      cell.classList.contains(PLAYER_X_CLASS) ||
+      cell.classList.contains(PLAYER_O_CLASS)
+    );
+  });
+}
+//This returns the value in case the is a draw.
+//the every method checks all the elements of an array to confirm a condition by returning a boolean value.
+//It is usually defined as an array which tests the elements of an array and returns true(1) if they pass the test.
