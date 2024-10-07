@@ -92,3 +92,13 @@ function setBoardHoverClass() {
     boardElement.classList.add(PLAYER_X_CLASS);
   }
 }
+//Makes a character appear in the cells while hovering over them with the mouse cursor before placing them.
+
+function checkWin(currentClass) {
+  return WINNING_COMBINATIONS.some((combination) => {
+    return combination.every((index) => {
+      return cellElements[index].classList.contains(currentClass);
+    });
+  });
+}
+//This will check if our board matches any of the winning combinations.
