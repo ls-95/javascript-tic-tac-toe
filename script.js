@@ -47,3 +47,16 @@ function handleCellClick(e) {
     setBoardHoverClass();
   }
 }
+//currentClass variable saves the character X or O.
+//endGame() is used to check if someone has already won by comparing the winning combinations to the gameplay.
+
+function endGame(draw) {
+  if (draw) {
+    winningMessageTextElement.innerText = "It's a draw!";
+  } else {
+    winningMessageTextElement.innerText = `Player with ${
+      isPlayer_O_Turn ? "O's" : "X's"
+    } wins!`;
+  }
+  winningMessageElement.classList.add("show");
+}
